@@ -83,6 +83,16 @@ const searchInput = document.querySelector("#searchInput");
 const searchResults = document.querySelector("#searchResults");
 let activeCategory = "全部";
 
+function renderNotes() {
+  const notesList = document.querySelector("#notesList");
+  notesList.innerHTML = dailyNotes.map(note => `
+    <article>
+      <time datetime="${note.date}">${note.date.slice(5).replace("-", ".")}</time>
+      <p>${note.text}</p>
+    </article>
+  `).join("");
+}
+
 function articleMeta(article) {
   return `<div class="article-meta"><span>${article.category}</span><i></i><time>${article.date}</time><i></i><span>${article.readTime}</span></div>`;
 }
@@ -148,6 +158,10 @@ document.querySelector("#themeButton").addEventListener("click", () => {
   const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   document.documentElement.dataset.theme = next;
   localStorage.setItem("blog-theme", next);
+  const giscusFrame = document.querySelector("iframe.giscus-frame");
+  giscusFrame?.contentWindow.postMessage({
+    giscus: { setConfig: { theme: next === "dark" ? "dark" : "light" } }
+  }, "https://giscus.app");
 });
 
 document.querySelector("#searchButton").addEventListener("click", () => {
@@ -179,4 +193,5 @@ if (storedTheme) {
   document.documentElement.dataset.theme = "dark";
 }
 
+renderNotes();
 renderArticles();

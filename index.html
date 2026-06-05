@@ -73,20 +73,7 @@
         <p class="section-kicker">片刻随笔</p>
         <h2>一些还没长成文章的想法</h2>
       </div>
-      <div class="notes-list">
-        <article>
-          <time datetime="2026-05-28">05.28</time>
-          <p>真正的效率，不是把每一分钟填满，而是知道什么值得留出整块时间。</p>
-        </article>
-        <article>
-          <time datetime="2026-05-16">05.16</time>
-          <p>一个好工具最动人的地方，是它会慢慢消失，只留下事情本身。</p>
-        </article>
-        <article>
-          <time datetime="2026-04-30">04.30</time>
-          <p>散步像是给思绪换一种标点。有些问题，坐着想不明白。</p>
-        </article>
-      </div>
+      <div class="notes-list" id="notesList"></div>
     </section>
 
     <section class="about-section" id="about">
@@ -96,6 +83,21 @@
         <h2>你好，我是米拉。</h2>
         <p>一名产品设计师和业余写作者。我关心技术如何塑造生活，也相信缓慢、诚实的表达仍然有价值。这个博客是我的公开笔记本。</p>
       </div>
+    </section>
+
+    <section class="guestbook-section" id="guestbook">
+      <div class="guestbook-heading">
+        <div>
+          <p class="section-kicker">访客留言</p>
+          <h2>在这里留下几句话</h2>
+        </div>
+        <div class="visit-count" title="匿名访问次数，不记录访客身份">
+          <span>本站访问</span>
+          <img src="https://hits.sh/liangna-sos.github.io/liubai-blog.svg?style=flat&label=&color=2e5d4b" alt="本站累计访问次数">
+        </div>
+      </div>
+      <p class="guestbook-note">留言由 GitHub Discussions 提供，需要登录 GitHub。请友善交流，不要公开个人敏感信息。</p>
+      <div class="giscus"></div>
     </section>
   </main>
 
@@ -122,6 +124,22 @@
     <article id="articleContent"></article>
   </dialog>
 
+  <script src="notes.js"></script>
   <script src="app.js"></script>
+  <script src="https://giscus.app/client.js"
+    data-repo="liangna-sos/liubai-blog"
+    data-repo-id="R_kgDOSySGWw"
+    data-category="General"
+    data-category-id="DIC_kwDOSySGW84C-lmf"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
 </body>
 </html>

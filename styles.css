@@ -235,7 +235,7 @@ svg {
   font-size: 10px;
 }
 
-.article-section, .notes-section, .about-section {
+.article-section, .notes-section, .about-section, .guestbook-section {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 }
@@ -531,6 +531,48 @@ h2 {
   color: var(--muted);
 }
 
+.guestbook-section {
+  padding: 88px 0 100px;
+  border-top: 1px solid var(--line);
+}
+
+.guestbook-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.guestbook-heading h2 {
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+.guestbook-note {
+  max-width: 680px;
+  margin: 0 0 40px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.visit-count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.visit-count img {
+  display: block;
+  min-width: 34px;
+  height: 20px;
+}
+
+.giscus {
+  min-height: 180px;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -684,6 +726,8 @@ dialog::backdrop {
   .notes-list article { grid-template-columns: 52px 1fr; gap: 15px; }
   .about-section { grid-template-columns: 1fr; padding: 72px 0; }
   .about-monogram { width: 110px; font-size: 54px; }
+  .guestbook-section { padding: 68px 0; }
+  .guestbook-heading { align-items: flex-start; flex-direction: column; }
   footer { flex-direction: column; gap: 4px; }
   footer p { margin: 0; }
   .article-dialog { padding: 54px 24px 40px; }
